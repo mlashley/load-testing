@@ -12,7 +12,9 @@ exports.handler = (event, context) => {
         newman = require('newman'),
         // options for the parallel collection runs
         options = {
-            collection: path.join(__dirname, filePathName)
+            collection: path.join(__dirname, filePathName),
+	    reporters: 'cli',
+	    color: 'off'
         },
         // callback function that marks the end of the current collection run, when called
         parallelCollectionRun = function (done) {
